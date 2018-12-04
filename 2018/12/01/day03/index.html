@@ -3,24 +3,24 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Into the Wild | Curemast</title>
+  <title>day02笔记 | Curemast</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="There is a pleasure in the pathless woods;There is a rapture on the lonely shore;There is socity, where none intrudes,By the deep sea, and music in its roar:I love not man the less, but Nature more…无径">
+  <meta name="description" content="SQL命令标准SQL语句分类  DDL:Data Define Language 定义数据结构      CREATE/DROP/ALTER  DML:Data Munipulate Language 操作数据      INSERT/DELETE/UPDATE  DQL:Data Query Language 查询数据      SELECT  DCK:Data Control Language">
 <meta name="keywords" content="朱治樯,樯,CMT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Into the Wild">
-<meta property="og:url" content="http://yoursite.com/2018/12/01/Rise/index.html">
+<meta property="og:title" content="day02笔记">
+<meta property="og:url" content="http://yoursite.com/2018/12/01/day03/index.html">
 <meta property="og:site_name" content="Curemast">
-<meta property="og:description" content="There is a pleasure in the pathless woods;There is a rapture on the lonely shore;There is socity, where none intrudes,By the deep sea, and music in its roar:I love not man the less, but Nature more…无径">
+<meta property="og:description" content="SQL命令标准SQL语句分类  DDL:Data Define Language 定义数据结构      CREATE/DROP/ALTER  DML:Data Munipulate Language 操作数据      INSERT/DELETE/UPDATE  DQL:Data Query Language 查询数据      SELECT  DCK:Data Control Language">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-01T08:37:09.117Z">
+<meta property="og:updated_time" content="2018-12-04T12:35:17.741Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Into the Wild">
-<meta name="twitter:description" content="There is a pleasure in the pathless woods;There is a rapture on the lonely shore;There is socity, where none intrudes,By the deep sea, and music in its roar:I love not man the less, but Nature more…无径">
+<meta name="twitter:title" content="day02笔记">
+<meta name="twitter:description" content="SQL命令标准SQL语句分类  DDL:Data Define Language 定义数据结构      CREATE/DROP/ALTER  DML:Data Munipulate Language 操作数据      INSERT/DELETE/UPDATE  DQL:Data Query Language 查询数据      SELECT  DCK:Data Control Language">
   
     <link rel="alternate" href="/atom.xml" title="Curemast" type="application/atom+xml">
   
@@ -104,7 +104,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-Rise" style="width: 66%; float:left;" class="article article-type-post" itemscope="" itemprop="blogPost">
+          <section id="main" style="float:none;"><article id="post-day03" style="width: 66%; float:left;" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -112,7 +112,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      Into the Wild
+      day02笔记
     </h1>
   
 
@@ -120,7 +120,7 @@
     
     <div class="article-meta">
       
-	<a href="/2018/12/01/Rise/" class="article-date">
+	<a href="/2018/12/01/day03/" class="article-date">
 	  <time datetime="2018-12-01T07:53:46.000Z" itemprop="datePublished">December 1, 2018</time>
 	</a>
 
@@ -133,7 +133,15 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>There is a pleasure in the pathless woods;<br>There is a rapture on the lonely shore;<br>There is socity, where none intrudes,<br>By the deep sea, and music in its roar:<br>I love not man the less, but Nature more…<br>无径之林，常有情趣；<br>无人之岸，几多惊喜；<br>世外桃源，何处寻觅，<br>聆听涛乐，须在海里：<br>爱我爱你，更爱自然…</p>
+        <p>SQL命令<br>标准SQL语句分类<br>  DDL:Data Define Language 定义数据结构<br>      CREATE/DROP/ALTER<br>  DML:Data Munipulate Language 操作数据<br>      INSERT/DELETE/UPDATE<br>  DQL:Data Query Language 查询数据<br>      SELECT<br>  DCK:Data Control Language 控制用户权限<br>      GRANT(授权)/REVOKE(收权)</p>
+<p>1.计算机存储字符<br>(1)如何存储英文字符<br>    ASCII:总共有128个，对所有的英文字符及标点符号进行了编码。<br>    Hello -&gt;72102108108111<br>    Latin-1:总共有256个，兼容ASCII码，同时对欧洲符号进行了编码。MySQL默认就使用这种编码。<br>(2)如何存储中文字符<br>    GB2312:对常用的6千多个汉字进行编码，兼容ASCII编码<br>    GBK:对2万多个汉字进行了编码，兼容GB2312<br>    BIG5:台湾繁体字编码，兼容ASCII<br>    Unicode:对世界上主流的语言常用的字符进行了编码，兼容ASCII，不兼容GBK，GB2312，BIG5等系列。具体分为UTF-8、UTF-16、UTF-32等存储方案。<br>(3)解决MySQL存储中文乱码<br>    sql脚本文件存储的编码utf8<br>   客户端连接服务器端使用的编码为utf8<br>   服务器端创建数据库存储使用的编码为utf8</p>
+<p>  #设置客户端连接服务器使用的编码为UTF-8<br>    SET NAMES UTF8;</p>
+<p>  #创建新的数据库,声明存储的编码为UTF8<br>    CREATE DATABASE jd CHARSET=UTF8;<br>练习：创建脚本文件01_dangdang.sql，创建数据库dangdang，设置编码为utf8，进入该数据库，创建保存图书数据的表book，包含bid、title、author(作者)、price(价格)、publish(出版社)、pubTime(出版时间)<br>    插入4条记录，修改第2条记录，删除第3条记录。<br>2.MySQL中的列类型<br>  创建数据表的时候，指定的列可以存储的数据类型。<br>      CREATE TABLE book( bid 列类型);<br>(1)数值类型——引号可加可不加<br>    TINYINT  微整型 占一个字节 范围-128~127<br>    SMALLINT   小整型 占2个字节 范围-32768~32767<br>    INT 占4个字节 范围-2147483648~2147483647<br>    BIGINT 大整型，占8个字节<br>    FLOAT 单精度浮点型，占4个字节，范围3.4e38，范围比INT大得多，可能产生计算误差。<br>    DOUBLE 双精度浮点型，占8个字节，范围比BIGINT大得多<br>    DECIMAL(M,D) 定点小数，不会产生计算误差，M代表总的有效位数，D代表小数点后的有效位数<br>    BOOL 布尔型，只有两个结果，TRUE/1、FALSE/0、TRUE和FALSE不能加引号；真正存储数据的时候，会使用TINYINT。</p>
+<p>(2)日期时间类型——必须添加引号<br>    DATE  日期型    ‘2018-12-31’<br>    TIME   时间型    ‘14:22:30’<br>    DATETIME   日期时间型    ‘2018-12-31  14:22:30’<br>(3)字符串类型——必须添加引号<br>    VARCHAR(M)   变长字符串，不会产生空间浪费，操作速度相对较慢，M最大值是65535<br>    CHAR(M)   定长字符串，可能产生空间浪费，操作速度相对较快，M最大值是255；用于存储手机号码，身份证号等固定长度的字符。<br>    TEXT(M)    大型变长字符串，最多存2G/4G。</p>
+<p>CREATE TABLE t1(<br>    id SMALLINT,<br>    age TINYINT,<br>    commentCount INT,<br>    Price DECIMAL(6,2),<br>    Phone CHAR(11),<br>    article VARCHAR(8000),<br>    pubTime DATE<br>)</p>
+<p>TB GB MB KB BT(byte字节) BIT<br>1byte=8bit<br>练习：创建02_xuezi.sql脚本文件，创建数据库xuezi，使用UTF8，进入该数据库，创建保存笔记本数据的表laptop，包含lid,title,price,stockCount(库存量)、shelfTime(上架时间) ，isIndex(是否为首页推荐)<br>    插入4条记录。<br>练习：创建脚本文件03_tedu.sql,创建数据库tedu，设置UTF8编码，进入该数据库。<br>    创建保存部门数据的表dept，包含did（部门编号）、dname（部门名称）、empCount（员工数量）<br>    10  研发部  3<br>    20  市场部  2<br>    30  运营部  2<br>3.列约束<br>    MySQL 可以对插入的数据进行特定的验证，只有满足条件才允许插入到数据表中，否则被认为是非法的插入。<br>    例如：一个人的性别只能是男或者女，一个人的年龄0~100之间。<br>(1)主键约束——PRIMARY KEY<br>    声明了主键列上的值不能出现重复，表中查询的记录会按照主键由小到大排序——加快查找的速度；通常主键添加到编号列中。<br>    注意：一个表中只能有一个主键<br>(2)唯一约束——UNIQUE<br>     声明了唯一约束的列上不能插入重复的值，允许插入NULL，而且允许插入多个NULL。</p>
+<p>NULL表示空，在插入数据，数据中展示无法确定要保存的数据。<br>例如：无法确定员工的姓名、工资。</p>
+<p>课后任务<br>    (1)复习今天内容，重新编写代码<br>    (2)练习：<br>    创建脚本文件xz.sql，创建数据库xz，设置编码为UTF8，进入该数据库。<br>    创建保存笔记本分类的表xz_laptap_family(fid,fname,laptopCount笔记本数量)<br>    10 联想 2        20 戴尔 2        30 小米 3<br>    创建笔记本数据表 xz_laptop(lid,title,price,spec规格,detail详细介绍，shelfTime上架时间、isQnsale是否在售、familyld所属的分类编号)<br>    添加7条数据</p>
 
       
     </div>
@@ -173,19 +181,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/12/01/day01/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/12/01/day02/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          day01笔记
+          day02笔记
         
       </div>
     </a>
   
   
-    <a href="/2018/12/01/day02/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/12/01/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">day02笔记</div>
+      <div class="article-nav-title">Hello World</div>
     </a>
   
 </nav>
