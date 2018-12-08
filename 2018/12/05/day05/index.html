@@ -3,24 +3,24 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Into the Wild | Curemast</title>
+  <title>day05笔记 | Curemast</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="There is a pleasure in the pathless woods;There is a rapture on the lonely shore;There is socity, where none intrudes,By the deep sea, and music in its roar:I love not man the less, but Nature more…无径">
+  <meta name="description" content="复习day04课后作业    SELECT ename,sex,birthday FROM emp WHERE salary&amp;gt;=8000 AND sex=0 ORDER BY salary DESC LIMIT 0,3;    WHERE salary&amp;gt;=8000 AND sex=0    ORDER BY salary DESC    LIMIT 0,31.复杂查询——聚合查询/分组">
 <meta name="keywords" content="朱治樯,樯,CMT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Into the Wild">
-<meta property="og:url" content="http://yoursite.com/2018/12/01/Rise/index.html">
+<meta property="og:title" content="day05笔记">
+<meta property="og:url" content="http://yoursite.com/2018/12/05/day05/index.html">
 <meta property="og:site_name" content="Curemast">
-<meta property="og:description" content="There is a pleasure in the pathless woods;There is a rapture on the lonely shore;There is socity, where none intrudes,By the deep sea, and music in its roar:I love not man the less, but Nature more…无径">
+<meta property="og:description" content="复习day04课后作业    SELECT ename,sex,birthday FROM emp WHERE salary&amp;gt;=8000 AND sex=0 ORDER BY salary DESC LIMIT 0,3;    WHERE salary&amp;gt;=8000 AND sex=0    ORDER BY salary DESC    LIMIT 0,31.复杂查询——聚合查询/分组">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-01T08:37:09.117Z">
+<meta property="og:updated_time" content="2018-12-08T08:37:54.727Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Into the Wild">
-<meta name="twitter:description" content="There is a pleasure in the pathless woods;There is a rapture on the lonely shore;There is socity, where none intrudes,By the deep sea, and music in its roar:I love not man the less, but Nature more…无径">
+<meta name="twitter:title" content="day05笔记">
+<meta name="twitter:description" content="复习day04课后作业    SELECT ename,sex,birthday FROM emp WHERE salary&amp;gt;=8000 AND sex=0 ORDER BY salary DESC LIMIT 0,3;    WHERE salary&amp;gt;=8000 AND sex=0    ORDER BY salary DESC    LIMIT 0,31.复杂查询——聚合查询/分组">
   
     <link rel="alternate" href="/atom.xml" title="Curemast" type="application/atom+xml">
   
@@ -104,7 +104,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-Rise" style="width: 66%; float:left;" class="article article-type-post" itemscope="" itemprop="blogPost">
+          <section id="main" style="float:none;"><article id="post-day05" style="width: 66%; float:left;" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -112,7 +112,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      Into the Wild
+      day05笔记
     </h1>
   
 
@@ -120,8 +120,8 @@
     
     <div class="article-meta">
       
-	<a href="/2018/12/01/Rise/" class="article-date">
-	  <time datetime="2018-12-01T07:53:46.000Z" itemprop="datePublished">December 1, 2018</time>
+	<a href="/2018/12/05/day05/" class="article-date">
+	  <time datetime="2018-12-05T07:53:46.000Z" itemprop="datePublished">December 5, 2018</time>
 	</a>
 
        
@@ -133,7 +133,14 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>There is a pleasure in the pathless woods;<br>There is a rapture on the lonely shore;<br>There is socity, where none intrudes,<br>By the deep sea, and music in its roar:<br>I love not man the less, but Nature more…<br>无径之林，常有情趣；<br>无人之岸，几多惊喜；<br>世外桃源，何处寻觅，<br>聆听涛乐，须在海里：<br>爱我爱你，更爱自然…</p>
+        <p>复习<br>day04课后作业<br>    SELECT ename,sex,birthday FROM emp WHERE salary&gt;=8000 AND sex=0 ORDER BY salary DESC LIMIT 0,3;<br>    WHERE salary&gt;=8000 AND sex=0<br>    ORDER BY salary DESC<br>    LIMIT 0,3<br>1.复杂查询——聚合查询/分组查询<br>    示例：查询出所有员工的数量<br>    SELECT COUNT(eid) FROM emp;<br>    练习：使用员工的姓名获取员工数量<br>    SELECT COUNT(ename) FROM emp;<br>    练习：使用员工部门编号获取员工数量<br>    SELECT COUNT(deptId) FROM emp;<br>    计算员工数量<br>    SELECT COUNT(<em>) FROM emp;        推荐写法<br>    函数：功能体，接受若干个函数，返回/产出特定的结果——饺子机<br>    聚合函数<br>        计算：COUNT()/求和：SUM()/求平均值：AVG()/求最大值：MAX()/求最小值：MIN()<br>    练习：查询出所有员工工资的总和<br>    SELECT SUM(salary) FROM emp;<br>    练习：查询出所有男员工的平均工资<br>    SELECT AVG(salary) FROM emp WHERE sex=1;<br>    SELECT SUM(salary)/COUNT(</em>) FROM emp WHERE sex=1;<br>    练习：查询出工资最高的员工的工资<br>    SELECT MAX(salary) FROM emp;<br>    练习：查询出工资最高的员工的工资<br>    SELECT MIN(salary) FROM emp;<br>    练习：查询年龄最大的员工的生日<br>    SELECT MIN(birthday) FROM emp;<br>    分组查询：查询出每个部门员工的最高工资<br>    示例：查询出每个部门员工的最高工资<br>    SELECT ename,MAX(salary),deptid FROM emp GROUP BY deptId;<br>    练习：查询出男女员工的平均工资，最高工资，最低工资<br>    SELECT sex,AVG(salary),MAX(salary),MIN(salary) FROM emp GROUP BY sex;<br>        YEAR()  获取日期所在的年份<br>    示例：查询1991年出生的员工<br>    SELECT <em> FROM emp WHERE YEAR(birthday)=’1991’;<br>        MONTH()  获取日期所在的月份<br>    示例：查询日期所在的月份<br>    SELECT </em> FROM emp WHERE MONTH(birthday)=’3’;<br>2.复杂查询——子查询<br>    本质上就是一个SQL语句的查询结果作为另一个SQL语句的查询条件<br>    示例：查询出研发部员工的所有信息<br>    步骤1：查询亚发布的部门编号<br>    SELECT did FROM dept WHERE dname=’研发部’;<br>    步骤2：使用编号查询员工<br>    SELECT <em> FROM emp WHERE deptId=10;<br>    综合：SELECT </em> FROM emp WHERE deptId=(SELECT did FROM dept WHERE dname=’研发部’);<br>    练习：查询比tom工资高的员工的所有信息<br>    步骤1：查询tom的工资<br>    SELECT salary FROM emp WHERE ename=’tom’;<br>    步骤2：查询工资大于6000的员工<br>    SELECT <em> FROM emp WHERE salary&gt;6000;<br>    综合：SELECT </em> FROM emp WHERE salary&gt;(SELECT salary FROM emp WHERE ename=’tom’);<br>    练习：查询出和tom同一年出生的员工所有信息<br>    SELECT * FROM emp WHERE YEAR(birthday)=(SELECT YEAR(birthday) FROM emp WHERE ename=’tom’);<br>3.多表查询<br>    示例：查询出所有员工的姓名及其所在部门名称<br>    SELECT ename,dname FROM emp,dept;    产生了笛卡尔积，每一个ename都和所有的dname产生了关联。<br>    如何避免笛卡尔积，为多表查询添加条件。<br>    SELECT ename,dname FROM emp,dept WHERE deptId=did;<br>    上述语法无法查询出没有部门的员工，也不能查询出没有员工的部门<br>    （1）内连接INNER JOIN … ON ——和之前的结果一样<br>    SELECT ename,dname FROM emp INNER JOIN dept ON deptId=did;<br>    （2）左外连接 LEFT OUTER JOIN…ON<br>    SELECT ename,dname FROM emp LEFT OUTER JOIN dept ON deptId=did;<br>    查询结果是左侧表中所有的记录，即使右侧没有对应的记录<br>    OUTER 可以省略<br>    （3）右外连接 RIGHT OUTER JOIN…ON<br>    SELECT ename,dname FROM emp RIGHT OUTER JOIN dept ON deptId=did;<br>    查询结果是右侧表中所有的记录，即使左侧没有对应的记录<br>    OUTER 可以省略<br>    （4）全连接 FULL JOIN<br>    显示左侧和右侧表中所有的记录——MySQL不支持<br>MySQL中的全连接<br>    (SELECT ename FROM emp_bj)<br>    UNION<br>    (SELECT ename FROM emp_sh);</p>
+<pre><code>(SELECT ename,dname FROM emp LEFT JOIN dept ON deptId=did)
+UNION
+(SELECT ename,dname FROM emp RIGHT JOIN dept ON deptId=did);
+</code></pre><p>UNION 合并相同的记录<br>UNION ALL 显示全部的记录（不合并相同的记录）</p>
+<p>4.项目中如何保持日期、时间<br>    2018-12-6 14:40:30<br>    2018年12月6日        2018/12/6        12/6/2018<br>储存的时距离计算机元年（1970-1-1）的毫秒数<br>距离计算机元年的毫秒数<br>48<em>365</em>24<em>60</em>60*1000<br>1513728000000 使用BIGINT的列类型</p>
+<p>5.学习一门编程语言的基本操作<br>（1）了解背景知识：历史、现状、特点、应用场景<br>（2）搭建开发环境：编写hello world<br>（3）变量(var)和常量(const)<br>（4）数据类型<br>（5）运算符<br>（6）逻辑结构<br>（7）通用小程序<br>（8）函数和对象<br>（9）第三方库、框架<br>（10）实用的项目<br>6.JS概述<br>    （1）发展历史<br>    1995年，最早出现在netscape浏览器中<br>    2009年，JS遵循CommonJS规范，开始向服务器端发展<br>    （2）特点<br>    弱类型语言<br>    解释型语言，编译一行，执行一行<br>    跨平台<br>    基于对象<br>    （3）应用领域<br>    网页中的交互效果<br>    移动App<br>    Web服务器<br>7.搭建JS开发环境<br>    浏览器中，内置的JS解释器<br>    服务器中，需要安装NODEJS<br>    <a href="https://nodejs.org" target="_blank" rel="noopener">https://nodejs.org</a>    NODEJS官网<br>    运行方式<br>          （1）NODEJS下<br>    创建js文件<br>    node c:/xampp/…/02.js<br>          （2）浏览器下<br>    创建js文件<br>    创建html文件<br>            <script src="02.js"></script><br>    双击打开html<br>8.JS语法规范<br>    （1）区分大小写<br>    （2）每行结束的分号可加可不加，习惯上都加<br>    （3）分为单行注释（//…）和多行注释（/<em>…</em>/）<br>9.变量<br>    变量就是用于存储数据的容器<br>    x=1<br>    y=2<br>    （1）声明变量<br>    使用关键字 var<br>    var x=1<br>    练习：声明多个变量，分别存储一个员工的编号、姓名、性别、生日、工资、部门编号。<br>    （2）变量的命令规则<br>    可以使用字母、美元符号、下划线、数字，不能以数字开头。<br>    不能使用关键字和保留字作为变量名<br>    userName      isOnsale<br>    user_name    is_onsale<br>    （3）一次生命多个变量<br>    var chinese=90,math=95;<br>    （4）声明变量未赋值<br>    var a;<br>    a的值为undefined(未定义)<br>10.常量<br>    一旦声明不能再重新赋值。<br>    例如：圆周率、春节、中秋节…<br>    const pi=3.14<br>    练习：使用变量存储半径，使用常量存储圆周率，计算圆的面积和周长。</p>
+<p>课后任务：<br>    （1）复习今天内容，删除代码，根据注释编写<br>    （2）练习：<br>    使用变量保存圆的半径为5，常量保存圆周为3.14，分别计算30度/60度的周长。<br>    使用变量保存商品1的单价12.5和数量7，商品2的单价18，数量3.5，计算商品的总价。<br>    （3）预习JS的数据类型</p>
 
       
     </div>
@@ -173,19 +180,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/12/05/day05/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/12/05/day04/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          day05笔记
+          day04笔记
         
       </div>
     </a>
   
   
-    <a href="/2018/12/01/day01/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/12/01/Rise/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">day01笔记</div>
+      <div class="article-nav-title">Into the Wild</div>
     </a>
   
 </nav>

@@ -105,6 +105,90 @@
         
           <section id="main">
   
+    <article id="post-day06" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/12/08/day06/">day06笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/12/08/day06/" class="article-date">
+	  <time datetime="2018-12-08T07:53:46.000Z" itemprop="datePublished">December 8, 2018</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>复习<br>复杂查询<br>聚合查询/分组查询<br>    CONUT(*)/SUM()/AVG()/MAX()/MIN()<br>    GROUP BY<br>    YEAR()/MONTH()<br>    子查询 多表查询<br>    SELECT ename,dname FROM emp,dept WHERE deptId=did;<br>    内连接    表1    INNER JOIN 表2 ON…<br>    左外连接    表1    LEFT OUTER JOIN 表2 ON…<br>    右外连接    表1    RIGHT OUTER JOIN 表2 ON…<br>    全连接    UNION/UNION ALL</p>
+<p>1.数据类型<br>    分为原始类型和引用类型<br>    原始类型分为数值型、字符串型、布尔型、未定义型(undefined)、null<br>        （1）数值型<br>    分为整型和浮点型<br>    整型在内存中占4个字节，浮点型占8个字节<br>    整型分为8进制（0开头）、10进制、16进制（0x开头）<br>    浮点型分为指数型和普通<br>        2.147e9 代表10的9次方    2.147e-9代表10的-9次方<br>        （2）字符串类型<br>    数据被引号所包含就是字符串类型，不区分单双引号<br>    查看某一个字符的unicode编码<br>    ‘t’charCodeAt()<br>        （3）布尔型<br>    在程序中表示真或者假<br>    true/false<br>    常用语一些是否的结果<br>        isVip、isOnsale、isLogin<br>        （4）未定义型<br>    声明了一个变量，未赋值结果是undefined<br>        （5）空（null）<br>    用于引用数据类型<br>        检测数据类型<br>    typeof()<br>    number/string/boolean/undefined/object<br>2.数据类型转换<br>    （1）隐式转换<br>        ①数字+字符串：数字转成字符串<br>    1+’a’    //‘1a’<br>        ②数字+布尔型：布尔型转成数字  ture-&gt;1 false-&gt;0<br>    1+true    //2<br>    1+false    //1<br>        ③字符串+布尔型：布尔型转成字符串<br>    ‘a’+true    //‘atrue’<br>        ④null的加法<br>    1+nall    //1    null-&gt;0<br>    true+null    //1    true-&gt;1    null-&gt;0<br>    ‘a’+null    //‘anull’    null-&gt;’null’<br>练习：var num1=3,num2=true,num3=’hello’;<br>console.log(num1+num2+num3);    //‘4hello’<br>console.log(num2+num3+num1);    //‘truehello3’<br>console.log(num3+num1+num2);    //‘hello3true’<br>-*/执行运算<br>    尝试将符号两端的数据转成数值型（自动调用Number转换），如果无法转换，返回NaN（Hot a Number）<br>        总结：加号的作用<br>    执行加法运算：执行字符串的拼接<br>    （2）强制转换<br>        ①将数据转成数值型<br>    Number()<br>    将任意的数据转换成数值型，如果被转换的字符串中含有非数字，则返回NaN；布尔型会转成数值型。<br>        ②将数据转换成整型<br>    parseInt()<br>    parseInt(‘1.5’)//1<br>    查看数据的开始是否为数字，遇到非数字则返回前面的数字。<br>    如果开头是非数字，则返回NaN<br>        ③将数据转成浮点型<br>    parseFloat()<br>    练习：’1.5a’ ‘7.1a’ ‘a2.3’<br>        ④将数据转换成字符串<br>    toString()<br>       var pi=3.14’<br>       pi.toString()<br>3.运算符和 表达式<br>    由运算符连接的操作数据，所组成的形式称为表达式<br>    （1）算术运算符</p>
+<pre><code>+    -    *    /    %    ++    --
+%   取余
+++  自增，在原来的基础之上加1
+--  自减，在原来的基础之上减1
+console.log(a++)    先打印a的值，然后再自增
+console.log(++a)    先自增，然后再打印a的值
+练习：
+var a=3;
+console.log(a++  +  ++a);
+先获取a的值(3),执行自增；
+++a先让a执行自增(5)，然后再获取a。
+var b=5;
+console.log(--b + b--);
+--b 先让b执行自减（4），获取b的值（4）
+b-- 现货区b的值（4），然后再执行自减
+（2）比较运算符
+     &gt;=   &lt;=   &gt;   &lt;   ==(等于)   !=   ===(全等于)   !==
+    返回结果是布尔型的值
+    ==    只是比较两个数据的值是否相同
+    ===    不仅比较数据的值，还比较两个数据的类型
+    3&gt;&apos;10&apos;//true
+数字和字符串比较，字符串转成数值型
+    &apos;3&apos;&gt;&apos;10&apos;
+两个字符串比较，比较的时Unicode码
+3-&gt;51    1-&gt;49
+    3&gt;&apos;10a&apos;
+    3&lt;&apos;10a&apos;
+    3==&apos;10a&apos;
+NaN和任何数字比较（&gt;  &lt;  &gt;=  &lt;=  ==  ===）都返回false；
+NaN==NaN 返回false
+（3）逻辑运算符
+|| 或者        &amp;&amp;并且        非！
+|| 关联的两个条件只需要满足其一，结果就是true，否则false
+&amp;&amp; 关联的两个条件都满足，结果是true，否则false
+! 取反
+</code></pre><p>逻辑短路<br>    ||  当第一个调节为true的时候，就不需要执行第二个条件<br>    &amp;&amp;  当第一个条件为false的时候，就不需要执行第二个条件<br>    练习：下边的代码是否会报错<br>    var a=3；<br>    a&gt;5 &amp;&amp; console.log(ename);<br>    a&gt;5 || console.log(ename);<br>    (4)位运算符<br>        将数据转成二进制然后执行运算<br>        1    10    11    100    101    110    111    1000   1001    1010    1011    10000….<br>                2                4                                         8                                                16<br>        101101=10000+1000+100+1<br>              32    +    8   + 4 +1=45<br>    56=32+16+8<br>        100000 + 10000 +1000=111000<br>        1000000000+1000000+10000+100=1001010100<br>    512              64          16       4 =596<br>    按位于（&amp;）    上下两位都是1，结果是1，否则是0<br>    按位或（|）    上下两位含有1，结果是1，否则是0<br>    按位异或（^）    上下两位相同是0，不同是1<br>    按位右移（&gt;&gt;）    删除二进制的最后n位，大概变小到原来的一半<br>    按位左移（&lt;&lt;）    在二进制的最后添加0，在原来的基础上变大一倍</p>
+<pre><code>练习：5&amp;9   8|10   6^12
+           0101   1000   0110
+           1001   1010   1100
+</code></pre><p>（5）赋值运算符<br>    =    +=    -+    *=    /=    %=<br>    在原来的基础之上进行加减乘除 </p>
+<p>课后任务：<br>    （1）复习今天内容，整理思维导图<br>    （2）练习：<br>    声明一个变量保存年份，如果是闰年，打印”是闰年”(逻辑短路)<br>    闰年标准：4年一个闰年（能被4整除），并且不能被100整除；或者能被400整除<br>    （3）预习逻辑结构（if   if-else   if-else 嵌套）</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-day04" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -211,6 +295,55 @@ count：是一个数字，最多读取的行数。
 </code></pre><p>课后任务：<br>    （1）复习今天内容，删除代码，保留注释，重新编写代码<br>    （2）练习：<br>        查询出工资为8000以上的女员工的姓名，性别，生日，结果按照工资降序排序，取前三个人。<br>    （3）查看”学子商城”表结构图</p>
 <pre><code>SELECT ename,sex,birthday FROM emp WHERE salary&gt;8000 ORDER BY salary DESC LIMIT 0,3;
 </code></pre>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-day05" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/12/05/day05/">day05笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/12/05/day05/" class="article-date">
+	  <time datetime="2018-12-05T07:53:46.000Z" itemprop="datePublished">December 5, 2018</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>复习<br>day04课后作业<br>    SELECT ename,sex,birthday FROM emp WHERE salary&gt;=8000 AND sex=0 ORDER BY salary DESC LIMIT 0,3;<br>    WHERE salary&gt;=8000 AND sex=0<br>    ORDER BY salary DESC<br>    LIMIT 0,3<br>1.复杂查询——聚合查询/分组查询<br>    示例：查询出所有员工的数量<br>    SELECT COUNT(eid) FROM emp;<br>    练习：使用员工的姓名获取员工数量<br>    SELECT COUNT(ename) FROM emp;<br>    练习：使用员工部门编号获取员工数量<br>    SELECT COUNT(deptId) FROM emp;<br>    计算员工数量<br>    SELECT COUNT(<em>) FROM emp;        推荐写法<br>    函数：功能体，接受若干个函数，返回/产出特定的结果——饺子机<br>    聚合函数<br>        计算：COUNT()/求和：SUM()/求平均值：AVG()/求最大值：MAX()/求最小值：MIN()<br>    练习：查询出所有员工工资的总和<br>    SELECT SUM(salary) FROM emp;<br>    练习：查询出所有男员工的平均工资<br>    SELECT AVG(salary) FROM emp WHERE sex=1;<br>    SELECT SUM(salary)/COUNT(</em>) FROM emp WHERE sex=1;<br>    练习：查询出工资最高的员工的工资<br>    SELECT MAX(salary) FROM emp;<br>    练习：查询出工资最高的员工的工资<br>    SELECT MIN(salary) FROM emp;<br>    练习：查询年龄最大的员工的生日<br>    SELECT MIN(birthday) FROM emp;<br>    分组查询：查询出每个部门员工的最高工资<br>    示例：查询出每个部门员工的最高工资<br>    SELECT ename,MAX(salary),deptid FROM emp GROUP BY deptId;<br>    练习：查询出男女员工的平均工资，最高工资，最低工资<br>    SELECT sex,AVG(salary),MAX(salary),MIN(salary) FROM emp GROUP BY sex;<br>        YEAR()  获取日期所在的年份<br>    示例：查询1991年出生的员工<br>    SELECT <em> FROM emp WHERE YEAR(birthday)=’1991’;<br>        MONTH()  获取日期所在的月份<br>    示例：查询日期所在的月份<br>    SELECT </em> FROM emp WHERE MONTH(birthday)=’3’;<br>2.复杂查询——子查询<br>    本质上就是一个SQL语句的查询结果作为另一个SQL语句的查询条件<br>    示例：查询出研发部员工的所有信息<br>    步骤1：查询亚发布的部门编号<br>    SELECT did FROM dept WHERE dname=’研发部’;<br>    步骤2：使用编号查询员工<br>    SELECT <em> FROM emp WHERE deptId=10;<br>    综合：SELECT </em> FROM emp WHERE deptId=(SELECT did FROM dept WHERE dname=’研发部’);<br>    练习：查询比tom工资高的员工的所有信息<br>    步骤1：查询tom的工资<br>    SELECT salary FROM emp WHERE ename=’tom’;<br>    步骤2：查询工资大于6000的员工<br>    SELECT <em> FROM emp WHERE salary&gt;6000;<br>    综合：SELECT </em> FROM emp WHERE salary&gt;(SELECT salary FROM emp WHERE ename=’tom’);<br>    练习：查询出和tom同一年出生的员工所有信息<br>    SELECT * FROM emp WHERE YEAR(birthday)=(SELECT YEAR(birthday) FROM emp WHERE ename=’tom’);<br>3.多表查询<br>    示例：查询出所有员工的姓名及其所在部门名称<br>    SELECT ename,dname FROM emp,dept;    产生了笛卡尔积，每一个ename都和所有的dname产生了关联。<br>    如何避免笛卡尔积，为多表查询添加条件。<br>    SELECT ename,dname FROM emp,dept WHERE deptId=did;<br>    上述语法无法查询出没有部门的员工，也不能查询出没有员工的部门<br>    （1）内连接INNER JOIN … ON ——和之前的结果一样<br>    SELECT ename,dname FROM emp INNER JOIN dept ON deptId=did;<br>    （2）左外连接 LEFT OUTER JOIN…ON<br>    SELECT ename,dname FROM emp LEFT OUTER JOIN dept ON deptId=did;<br>    查询结果是左侧表中所有的记录，即使右侧没有对应的记录<br>    OUTER 可以省略<br>    （3）右外连接 RIGHT OUTER JOIN…ON<br>    SELECT ename,dname FROM emp RIGHT OUTER JOIN dept ON deptId=did;<br>    查询结果是右侧表中所有的记录，即使左侧没有对应的记录<br>    OUTER 可以省略<br>    （4）全连接 FULL JOIN<br>    显示左侧和右侧表中所有的记录——MySQL不支持<br>MySQL中的全连接<br>    (SELECT ename FROM emp_bj)<br>    UNION<br>    (SELECT ename FROM emp_sh);</p>
+<pre><code>(SELECT ename,dname FROM emp LEFT JOIN dept ON deptId=did)
+UNION
+(SELECT ename,dname FROM emp RIGHT JOIN dept ON deptId=did);
+</code></pre><p>UNION 合并相同的记录<br>UNION ALL 显示全部的记录（不合并相同的记录）</p>
+<p>4.项目中如何保持日期、时间<br>    2018-12-6 14:40:30<br>    2018年12月6日        2018/12/6        12/6/2018<br>储存的时距离计算机元年（1970-1-1）的毫秒数<br>距离计算机元年的毫秒数<br>48<em>365</em>24<em>60</em>60*1000<br>1513728000000 使用BIGINT的列类型</p>
+<p>5.学习一门编程语言的基本操作<br>（1）了解背景知识：历史、现状、特点、应用场景<br>（2）搭建开发环境：编写hello world<br>（3）变量(var)和常量(const)<br>（4）数据类型<br>（5）运算符<br>（6）逻辑结构<br>（7）通用小程序<br>（8）函数和对象<br>（9）第三方库、框架<br>（10）实用的项目<br>6.JS概述<br>    （1）发展历史<br>    1995年，最早出现在netscape浏览器中<br>    2009年，JS遵循CommonJS规范，开始向服务器端发展<br>    （2）特点<br>    弱类型语言<br>    解释型语言，编译一行，执行一行<br>    跨平台<br>    基于对象<br>    （3）应用领域<br>    网页中的交互效果<br>    移动App<br>    Web服务器<br>7.搭建JS开发环境<br>    浏览器中，内置的JS解释器<br>    服务器中，需要安装NODEJS<br>    <a href="https://nodejs.org" target="_blank" rel="noopener">https://nodejs.org</a>    NODEJS官网<br>    运行方式<br>          （1）NODEJS下<br>    创建js文件<br>    node c:/xampp/…/02.js<br>          （2）浏览器下<br>    创建js文件<br>    创建html文件<br>            <script src="02.js"></script><br>    双击打开html<br>8.JS语法规范<br>    （1）区分大小写<br>    （2）每行结束的分号可加可不加，习惯上都加<br>    （3）分为单行注释（//…）和多行注释（/<em>…</em>/）<br>9.变量<br>    变量就是用于存储数据的容器<br>    x=1<br>    y=2<br>    （1）声明变量<br>    使用关键字 var<br>    var x=1<br>    练习：声明多个变量，分别存储一个员工的编号、姓名、性别、生日、工资、部门编号。<br>    （2）变量的命令规则<br>    可以使用字母、美元符号、下划线、数字，不能以数字开头。<br>    不能使用关键字和保留字作为变量名<br>    userName      isOnsale<br>    user_name    is_onsale<br>    （3）一次生命多个变量<br>    var chinese=90,math=95;<br>    （4）声明变量未赋值<br>    var a;<br>    a的值为undefined(未定义)<br>10.常量<br>    一旦声明不能再重新赋值。<br>    例如：圆周率、春节、中秋节…<br>    const pi=3.14<br>    练习：使用变量存储半径，使用常量存储圆周率，计算圆的面积和周长。</p>
+<p>课后任务：<br>    （1）复习今天内容，删除代码，根据注释编写<br>    （2）练习：<br>    使用变量保存圆的半径为5，常量保存圆周为3.14，分别计算30度/60度的周长。<br>    使用变量保存商品1的单价12.5和数量7，商品2的单价18，数量3.5，计算商品的总价。<br>    （3）预习JS的数据类型</p>
+
       
     </div>
     <footer class="entry-meta entry-footer">
@@ -579,7 +712,31 @@ count：是一个数字，最多读取的行数。
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/12/08/day06/">day06笔记</a></h6>
+              <span>December 8, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2018/12/05/day04/">day04笔记</a></h6>
+              <span>December 5, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/12/05/day05/">day05笔记</a></h6>
               <span>December 5, 2018</span>
             </div>
 
@@ -621,30 +778,6 @@ count：是一个数字，最多读取的行数。
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/12/01/day02/">day02笔记</a></h6>
-              <span>December 1, 2018</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/12/01/hello-world/">Hello World</a></h6>
-              <span>December 1, 2018</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -663,7 +796,7 @@ count：是一个数字，最多读取的行数。
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 

@@ -3,24 +3,24 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Into the Wild | Curemast</title>
+  <title>day06笔记 | Curemast</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="There is a pleasure in the pathless woods;There is a rapture on the lonely shore;There is socity, where none intrudes,By the deep sea, and music in its roar:I love not man the less, but Nature more…无径">
+  <meta name="description" content="复习复杂查询聚合查询/分组查询    CONUT(*)/SUM()/AVG()/MAX()/MIN()    GROUP BY    YEAR()/MONTH()    子查询 多表查询    SELECT ename,dname FROM emp,dept WHERE deptId=did;    内连接    表1    INNER JOIN 表2 ON…    左外连接    表1    L">
 <meta name="keywords" content="朱治樯,樯,CMT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Into the Wild">
-<meta property="og:url" content="http://yoursite.com/2018/12/01/Rise/index.html">
+<meta property="og:title" content="day06笔记">
+<meta property="og:url" content="http://yoursite.com/2018/12/08/day06/index.html">
 <meta property="og:site_name" content="Curemast">
-<meta property="og:description" content="There is a pleasure in the pathless woods;There is a rapture on the lonely shore;There is socity, where none intrudes,By the deep sea, and music in its roar:I love not man the less, but Nature more…无径">
+<meta property="og:description" content="复习复杂查询聚合查询/分组查询    CONUT(*)/SUM()/AVG()/MAX()/MIN()    GROUP BY    YEAR()/MONTH()    子查询 多表查询    SELECT ename,dname FROM emp,dept WHERE deptId=did;    内连接    表1    INNER JOIN 表2 ON…    左外连接    表1    L">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-01T08:37:09.117Z">
+<meta property="og:updated_time" content="2018-12-08T08:38:49.628Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Into the Wild">
-<meta name="twitter:description" content="There is a pleasure in the pathless woods;There is a rapture on the lonely shore;There is socity, where none intrudes,By the deep sea, and music in its roar:I love not man the less, but Nature more…无径">
+<meta name="twitter:title" content="day06笔记">
+<meta name="twitter:description" content="复习复杂查询聚合查询/分组查询    CONUT(*)/SUM()/AVG()/MAX()/MIN()    GROUP BY    YEAR()/MONTH()    子查询 多表查询    SELECT ename,dname FROM emp,dept WHERE deptId=did;    内连接    表1    INNER JOIN 表2 ON…    左外连接    表1    L">
   
     <link rel="alternate" href="/atom.xml" title="Curemast" type="application/atom+xml">
   
@@ -104,7 +104,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-Rise" style="width: 66%; float:left;" class="article article-type-post" itemscope="" itemprop="blogPost">
+          <section id="main" style="float:none;"><article id="post-day06" style="width: 66%; float:left;" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -112,7 +112,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      Into the Wild
+      day06笔记
     </h1>
   
 
@@ -120,8 +120,8 @@
     
     <div class="article-meta">
       
-	<a href="/2018/12/01/Rise/" class="article-date">
-	  <time datetime="2018-12-01T07:53:46.000Z" itemprop="datePublished">December 1, 2018</time>
+	<a href="/2018/12/08/day06/" class="article-date">
+	  <time datetime="2018-12-08T07:53:46.000Z" itemprop="datePublished">December 8, 2018</time>
 	</a>
 
        
@@ -133,7 +133,49 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>There is a pleasure in the pathless woods;<br>There is a rapture on the lonely shore;<br>There is socity, where none intrudes,<br>By the deep sea, and music in its roar:<br>I love not man the less, but Nature more…<br>无径之林，常有情趣；<br>无人之岸，几多惊喜；<br>世外桃源，何处寻觅，<br>聆听涛乐，须在海里：<br>爱我爱你，更爱自然…</p>
+        <p>复习<br>复杂查询<br>聚合查询/分组查询<br>    CONUT(*)/SUM()/AVG()/MAX()/MIN()<br>    GROUP BY<br>    YEAR()/MONTH()<br>    子查询 多表查询<br>    SELECT ename,dname FROM emp,dept WHERE deptId=did;<br>    内连接    表1    INNER JOIN 表2 ON…<br>    左外连接    表1    LEFT OUTER JOIN 表2 ON…<br>    右外连接    表1    RIGHT OUTER JOIN 表2 ON…<br>    全连接    UNION/UNION ALL</p>
+<p>1.数据类型<br>    分为原始类型和引用类型<br>    原始类型分为数值型、字符串型、布尔型、未定义型(undefined)、null<br>        （1）数值型<br>    分为整型和浮点型<br>    整型在内存中占4个字节，浮点型占8个字节<br>    整型分为8进制（0开头）、10进制、16进制（0x开头）<br>    浮点型分为指数型和普通<br>        2.147e9 代表10的9次方    2.147e-9代表10的-9次方<br>        （2）字符串类型<br>    数据被引号所包含就是字符串类型，不区分单双引号<br>    查看某一个字符的unicode编码<br>    ‘t’charCodeAt()<br>        （3）布尔型<br>    在程序中表示真或者假<br>    true/false<br>    常用语一些是否的结果<br>        isVip、isOnsale、isLogin<br>        （4）未定义型<br>    声明了一个变量，未赋值结果是undefined<br>        （5）空（null）<br>    用于引用数据类型<br>        检测数据类型<br>    typeof()<br>    number/string/boolean/undefined/object<br>2.数据类型转换<br>    （1）隐式转换<br>        ①数字+字符串：数字转成字符串<br>    1+’a’    //‘1a’<br>        ②数字+布尔型：布尔型转成数字  ture-&gt;1 false-&gt;0<br>    1+true    //2<br>    1+false    //1<br>        ③字符串+布尔型：布尔型转成字符串<br>    ‘a’+true    //‘atrue’<br>        ④null的加法<br>    1+nall    //1    null-&gt;0<br>    true+null    //1    true-&gt;1    null-&gt;0<br>    ‘a’+null    //‘anull’    null-&gt;’null’<br>练习：var num1=3,num2=true,num3=’hello’;<br>console.log(num1+num2+num3);    //‘4hello’<br>console.log(num2+num3+num1);    //‘truehello3’<br>console.log(num3+num1+num2);    //‘hello3true’<br>-*/执行运算<br>    尝试将符号两端的数据转成数值型（自动调用Number转换），如果无法转换，返回NaN（Hot a Number）<br>        总结：加号的作用<br>    执行加法运算：执行字符串的拼接<br>    （2）强制转换<br>        ①将数据转成数值型<br>    Number()<br>    将任意的数据转换成数值型，如果被转换的字符串中含有非数字，则返回NaN；布尔型会转成数值型。<br>        ②将数据转换成整型<br>    parseInt()<br>    parseInt(‘1.5’)//1<br>    查看数据的开始是否为数字，遇到非数字则返回前面的数字。<br>    如果开头是非数字，则返回NaN<br>        ③将数据转成浮点型<br>    parseFloat()<br>    练习：’1.5a’ ‘7.1a’ ‘a2.3’<br>        ④将数据转换成字符串<br>    toString()<br>       var pi=3.14’<br>       pi.toString()<br>3.运算符和 表达式<br>    由运算符连接的操作数据，所组成的形式称为表达式<br>    （1）算术运算符</p>
+<pre><code>+    -    *    /    %    ++    --
+%   取余
+++  自增，在原来的基础之上加1
+--  自减，在原来的基础之上减1
+console.log(a++)    先打印a的值，然后再自增
+console.log(++a)    先自增，然后再打印a的值
+练习：
+var a=3;
+console.log(a++  +  ++a);
+先获取a的值(3),执行自增；
+++a先让a执行自增(5)，然后再获取a。
+var b=5;
+console.log(--b + b--);
+--b 先让b执行自减（4），获取b的值（4）
+b-- 现货区b的值（4），然后再执行自减
+（2）比较运算符
+     &gt;=   &lt;=   &gt;   &lt;   ==(等于)   !=   ===(全等于)   !==
+    返回结果是布尔型的值
+    ==    只是比较两个数据的值是否相同
+    ===    不仅比较数据的值，还比较两个数据的类型
+    3&gt;&apos;10&apos;//true
+数字和字符串比较，字符串转成数值型
+    &apos;3&apos;&gt;&apos;10&apos;
+两个字符串比较，比较的时Unicode码
+3-&gt;51    1-&gt;49
+    3&gt;&apos;10a&apos;
+    3&lt;&apos;10a&apos;
+    3==&apos;10a&apos;
+NaN和任何数字比较（&gt;  &lt;  &gt;=  &lt;=  ==  ===）都返回false；
+NaN==NaN 返回false
+（3）逻辑运算符
+|| 或者        &amp;&amp;并且        非！
+|| 关联的两个条件只需要满足其一，结果就是true，否则false
+&amp;&amp; 关联的两个条件都满足，结果是true，否则false
+! 取反
+</code></pre><p>逻辑短路<br>    ||  当第一个调节为true的时候，就不需要执行第二个条件<br>    &amp;&amp;  当第一个条件为false的时候，就不需要执行第二个条件<br>    练习：下边的代码是否会报错<br>    var a=3；<br>    a&gt;5 &amp;&amp; console.log(ename);<br>    a&gt;5 || console.log(ename);<br>    (4)位运算符<br>        将数据转成二进制然后执行运算<br>        1    10    11    100    101    110    111    1000   1001    1010    1011    10000….<br>                2                4                                         8                                                16<br>        101101=10000+1000+100+1<br>              32    +    8   + 4 +1=45<br>    56=32+16+8<br>        100000 + 10000 +1000=111000<br>        1000000000+1000000+10000+100=1001010100<br>    512              64          16       4 =596<br>    按位于（&amp;）    上下两位都是1，结果是1，否则是0<br>    按位或（|）    上下两位含有1，结果是1，否则是0<br>    按位异或（^）    上下两位相同是0，不同是1<br>    按位右移（&gt;&gt;）    删除二进制的最后n位，大概变小到原来的一半<br>    按位左移（&lt;&lt;）    在二进制的最后添加0，在原来的基础上变大一倍</p>
+<pre><code>练习：5&amp;9   8|10   6^12
+           0101   1000   0110
+           1001   1010   1100
+</code></pre><p>（5）赋值运算符<br>    =    +=    -+    *=    /=    %=<br>    在原来的基础之上进行加减乘除 </p>
+<p>课后任务：<br>    （1）复习今天内容，整理思维导图<br>    （2）练习：<br>    声明一个变量保存年份，如果是闰年，打印”是闰年”(逻辑短路)<br>    闰年标准：4年一个闰年（能被4整除），并且不能被100整除；或者能被400整除<br>    （3）预习逻辑结构（if   if-else   if-else 嵌套）</p>
 
       
     </div>
@@ -173,19 +215,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/12/05/day05/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          day05笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/01/day01/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/12/05/day04/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">day01笔记</div>
+      <div class="article-nav-title">day04笔记</div>
     </a>
   
 </nav>
